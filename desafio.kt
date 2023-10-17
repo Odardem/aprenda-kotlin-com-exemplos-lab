@@ -5,7 +5,7 @@ val listaId: MutableList<Int> =  mutableListOf()
 val checkIdList:(Int,MutableList<Int>) -> Boolean =  {id:Int, lista:MutableList<Int> -> id !in lista}
 
 fun criarUsuario(nome: String, id: Int) =  if (checkIdList(id, listaId)) 
-{listaId.add(id);Usuario(nome, id)} else  throw Exception("Usuario com id: $id ja Existe, O ID deve ser unico")
+{listaId.add(id);println("Usuario $nome criado com sucesso!");Usuario(nome, id)} else  throw Exception("Usuario com id: $id ja Existe, O ID deve ser unico")
 
 enum class Nivel { BASICO, INTERMEDIARIO, AVANCADO }
 
@@ -47,8 +47,7 @@ fun main() {
     val javaclass = ConteudoEducacional("Classes em Java", 100)
     val javaFunctions = ConteudoEducacional("Funções em Java", 45)
     val javaCollections = ConteudoEducacional("Controles de Fluxo em Java",70)
-    
-	
+    	
     // Criacao de listas de cursos
     val cursosIniciantes:List<ConteudoEducacional> = listOf(logicaProgramacao,gitHubIntroduction)
     val cursosKotlin:List<ConteudoEducacional> = listOf(kotlinclass,kotlinCollections,kotlinFunctions,kotlinInitial,kotlinVariables)
@@ -65,6 +64,8 @@ fun main() {
     iniciandoNaProgramacao.matricular(vinicius)
     iniciandoNaProgramacao.matricular(vinicius)
     iniciandoNaProgramacao.matricular(wilson)
+
+}
    
 
 }
